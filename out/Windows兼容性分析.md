@@ -212,7 +212,7 @@ graph TD
     K --> L[变通: pnpm config set shell-emulator true<br/>或 PowerShell $env:X=1];
     J -->|已启用 shell-emulator| M[✅ 正常运行];
     D -->|维护者 .sh 工具| N[⚠️ 需 Git Bash];
-    D -->|追求 CI 完全一致| O[建议 WSL (CI 仅 Linux)];
+    D -->|追求 CI 完全一致| O["建议 WSL (CI 仅 Linux)"];
 
     style C fill:#e1ffe1
     style E fill:#e1ffe1
