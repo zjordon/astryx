@@ -4,6 +4,7 @@
  * @file Component discovery — find, list, and resolve Astryx components
  */
 
+import {COMPONENT_NAME_RE} from '../text/entry-names.mjs';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import {DOC_EXPORTS} from '../doc-compiler/read.mjs';
@@ -1092,10 +1093,6 @@ export function findExternalComponentDoc(docsDir, name) {
 // integration's package name) and the owner's `issuesUrl` so downstream
 // commands — and the future integration-component swizzle — can disambiguate
 // by package and route source/issues correctly.
-
-// A doc's `name` can name another export of its file, and a family doc's full
-// entries are components under their own names; every other doc reads as before.
-const COMPONENT_NAME_RE = /^[A-Z][\w$]*$/;
 
 /** @type {Map<string, {stamp: string, value: Record<string, any> | null}>} doc reads, reused while the doc file is unchanged */
 const docReads = new Map();
